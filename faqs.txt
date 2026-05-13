@@ -1,0 +1,110 @@
+P: ¿Quiénes somos?
+R: Somos una empresa dedicada a la gestión inmobiliaria de compraventa y alquiler de inmuebles residenciales y comerciales. Ofrecemos acompañamiento durante las distintas fases de la operación inmobiliaria.
+
+P: ¿Qué servicios ofrecemos?
+R: Gestionamos venta y alquiler de viviendas, valoración de inmuebles, publicación de anuncios, organización de visitas y apoyo documental durante operaciones inmobiliarias.
+
+P: ¿En qué zonas trabajamos?
+R: Operamos principalmente en zonas urbanas y residenciales de Madrid y alrededores. Las áreas concretas pueden variar según disponibilidad y demanda.
+
+P: ¿Cuál es el horario de atención?
+R: El horario de atención no está especificado. La disponibilidad puede depender del canal de contacto y del agente asignado.
+
+P: ¿Qué canales de contacto están disponibles?
+R: Se puede contactar mediante teléfono, correo electrónico, formularios web o mensajería digital, según los canales habilitados por la empresa.
+
+P: ¿Cómo funciona el proceso de compra de una vivienda?
+R: El proceso incluye búsqueda del inmueble, visitas, negociación, firma de arras, gestión financiera y firma ante notario.
+
+P: ¿Cómo funciona el proceso de alquiler?
+R: El proceso de alquiler incluye visita del inmueble, validación de documentación, reserva, firma del contrato y entrega de llaves.
+
+P: ¿Qué documentación se necesita para comprar una vivienda?
+R: Habitualmente se solicita documento de identidad, justificantes económicos y documentación bancaria relacionada con la financiación.
+
+P: ¿Qué documentación se necesita para alquilar una vivienda?
+R: Normalmente se requiere documento identificativo, contrato laboral, nóminas y justificantes de solvencia económica.
+
+P: ¿Cómo se puede reservar una vivienda?
+R: La reserva suele realizarse mediante firma de un documento de reserva y el pago de una cantidad acordada entre las partes.
+
+P: ¿Qué son las arras?
+R: Las arras son un acuerdo previo entre comprador y vendedor que formaliza el compromiso de compraventa mediante una señal económica.
+
+P: ¿Cuáles son los plazos habituales de una compraventa?
+R: El plazo habitual puede variar entre varias semanas y algunos meses, dependiendo de la financiación y de la documentación disponible.
+
+P: ¿Qué gastos existen en una compraventa?
+R: Los gastos habituales incluyen impuestos, notaría, registro, gestoría y posibles costes de financiación hipotecaria.
+
+P: ¿Qué es una hipoteca?
+R: Una hipoteca es un préstamo bancario destinado a financiar la compra de un inmueble, utilizando la vivienda como garantía.
+
+P: ¿Qué es una tasación inmobiliaria?
+R: La tasación es una valoración técnica realizada por una entidad autorizada para determinar el valor aproximado de un inmueble.
+
+P: ¿Qué función tiene la notaría?
+R: La notaría formaliza la firma de escrituras y verifica la legalidad de la operación inmobiliaria.
+
+P: ¿Para qué sirve el Registro de la Propiedad?
+R: El registro permite inscribir oficialmente la titularidad del inmueble y garantizar seguridad jurídica sobre la propiedad.
+
+P: ¿Qué impuestos intervienen en la compra de una vivienda?
+R: Los impuestos dependen del tipo de inmueble y de la comunidad autónoma. Pueden incluir IVA, ITP y AJD.
+
+P: ¿Qué es la cuota de comunidad?
+R: Es el importe periódico destinado al mantenimiento de zonas comunes y servicios compartidos del edificio o urbanización.
+
+P: ¿Qué es el IBI?
+R: El Impuesto sobre Bienes Inmuebles es un tributo municipal asociado a la titularidad de un inmueble.
+
+P: ¿Cómo se publica un piso en la plataforma?
+R: El inmueble se registra con fotografías, descripción, características técnicas y documentación básica de la propiedad.
+
+P: ¿Cómo se gestionan las visitas?
+R: Las visitas se organizan mediante cita previa y coordinación entre propietarios, agentes y posibles compradores o inquilinos.
+
+P: ¿Cómo se realiza la valoración de un inmueble?
+R: La valoración se basa en ubicación, superficie, estado, mercado local y características del inmueble.
+
+P: ¿Qué ocurre tras realizar una reserva?
+R: Tras la reserva se suele retirar temporalmente el inmueble del mercado mientras continúa el proceso documental.
+
+P: ¿Se puede cancelar una reserva?
+R: La cancelación depende de las condiciones acordadas en el documento firmado entre las partes.
+
+P: ¿Cómo se informa del estado de un inmueble?
+R: El estado del inmueble se comunica mediante descripción técnica, fotografías y observaciones proporcionadas durante la gestión.
+
+P: ¿Cómo se pueden resolver dudas sobre una operación?
+R: Las dudas pueden gestionarse a través de los canales de atención disponibles o mediante contacto directo con el agente asignado.
+
+P: ¿Cuál es el tiempo habitual de respuesta?
+R: El tiempo de respuesta no está especificado y puede variar según la carga de trabajo y el canal utilizado.
+
+P: ¿Qué hacer si ocurre una incidencia durante una visita?
+R: La incidencia debe comunicarse al agente responsable para su revisión y seguimiento.
+
+P: ¿Existe una política de privacidad?
+R: Sí. La gestión de datos personales debe realizarse conforme a la normativa vigente de protección de datos.
+
+P: ¿Cómo se protegen los datos personales?
+R: Los datos personales se almacenan y gestionan utilizando medidas de seguridad técnicas y organizativas adecuadas.
+
+P: ¿Qué tipo de inmuebles gestionamos?
+R: Gestionamos viviendas, pisos, chalets, locales comerciales, oficinas y otros activos inmobiliarios.
+
+P: ¿Cuál es el perfil de cliente habitual?
+R: El perfil habitual incluye compradores, vendedores, propietarios, inquilinos e inversores inmobiliarios.
+
+P: ¿Qué barrios o zonas cubrimos?
+R: Trabajamos en distintos barrios y municipios según disponibilidad de inmuebles y demanda del mercado.
+
+P: ¿Qué requisitos existen para vender una vivienda?
+R: Es necesario acreditar la titularidad del inmueble y disponer de la documentación obligatoria para la operación.
+
+P: ¿Qué requisitos existen para comprar una vivienda?
+R: El comprador debe acreditar identidad, capacidad financiera y cumplimiento de los requisitos legales aplicables.
+
+P: ¿Qué requisitos existen para alquilar una vivienda?
+R: Habitualmente se solicita solvencia económica y documentación identificativa actualizada.
