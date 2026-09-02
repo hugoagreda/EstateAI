@@ -45,11 +45,12 @@ export function chunkToProperty(chunk: Chunk): Property | null {
   };
 }
 
-/** Short, honest provenance excerpt for the sources panel. */
+/** Provenance for the sources panel: document name + type ONLY. Never the
+ *  chunk text — returning the retrieved content would leak catalogue rows (and,
+ *  for other sectors, potentially sensitive passages). Security > detail. */
 export function chunkToSource(chunk: Chunk): SourceRef {
   const m = chunk.metadata;
-  const fragmento = chunk.texto.length > 180 ? chunk.texto.slice(0, 180) + "…" : chunk.texto;
-  return { fuente: m.fuente, categoria: m.categoria, zona: m.zona, fragmento };
+  return { fuente: m.fuente, categoria: m.categoria };
 }
 
 export function formatearPrecio(precio: number): string {

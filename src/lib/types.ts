@@ -46,19 +46,18 @@ export interface Property {
   imagen: string;
 }
 
-/** One retrieved source, shown in the "Ver fuentes utilizadas" panel. */
+/** One retrieved source, shown in the "Ver fuentes utilizadas" panel.
+ *  Provenance ONLY: document name + type. Never the retrieved content, so the
+ *  panel can't leak catalogue rows or (for other sectors) sensitive passages. */
 export interface SourceRef {
   fuente: string;
   categoria: Categoria;
-  zona?: string;
-  fragmento: string; // short excerpt, honest provenance
 }
 
 export interface ChatResponse {
   answer: string;
   properties: Property[];
   sources: SourceRef[];
-  engine: "mock" | "live"; // which pipeline produced this
 }
 
 export interface ChatError {
