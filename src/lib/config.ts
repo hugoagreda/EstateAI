@@ -1,6 +1,6 @@
 // Central config. Everything reads from here so there's one place to flip.
 
-export const MODE: "mock" | "live" =
+export const MODE: "mock" | "live" = 
   (process.env.ESTATEAI_MODE === "live" ? "live" : "mock");
 
 export const OPENAI_API_KEY = process.env.OPENAI_API_KEY ?? "";

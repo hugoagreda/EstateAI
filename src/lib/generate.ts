@@ -24,34 +24,75 @@ function construirContexto(chunks: Chunk[]): string {
 }
 
 /* ---- MOCK generation: no LLM. Compose an honest answer from retrieved data. ---- */
-export function generarRespuestaMock(query: string, chunks: Chunk[], properties: Property[]): string {
-  if (chunks.length === 0) {
-    return "No he encontrado información sobre eso en los datos cargados. Prueba con otra pregunta sobre pisos, barrios, el proceso de compra/alquiler o servicios de la agencia.";
-  }
 
-  // Lead with listings only when the most relevant result IS a listing.
-  // Otherwise (barrio / proceso / faq) lead with that passage, even if some
-  // properties were also retrieved (they still render as cards below).
+export interface CtxRespuesta {
+  zona: string | null;
+  pediaListado: boolean;
+  hayFiltro: boolean;
+}
+
+// Small deterministic variation so replies don't read as a fixed template
+// (no LLM: a stable index from the query picks a phrasing).
+function elegir<T>(opciones: T[], semilla: string): T {
+  let h = 0;
+  for (let i = 0; i < semilla.length; i++) h = (h * 31 + semilla.charCodeAt(i)) >>> 0;
+  return opciones[h % opciones.length];
+}
+
+function listar(properties: Property[], ctx: CtxRespuesta, query: string): string {
+  const n = properties.length;
+  const donde = ctx.zona ? ` en ${ctx.zona}` : "";
+  const cabecera =
+    n === 1
+      ? elegir(
+          [`Solo tengo un inmueble${donde} que encaje con lo que buscas:`,
+           `De momento hay uno${donde} que cuadra con tu búsqueda:`],
+          query,
+        )
+      : elegir(
+          [`Tengo ${n} inmuebles${donde} que encajan con lo que buscas:`,
+           `He encontrado ${n}${donde} que cuadran con lo que pides:`,
+           `Estos ${n}${donde} encajan con tu búsqueda:`],
+          query,
+        );
+  const lineas = properties
+    .map((p) => `• ${p.titulo} — ${formatearPrecio(p.precio)} · ${p.m2} m² · ${p.habitaciones} hab · ${p.disponibilidad}`)
+    .join("\n");
+  return `${cabecera}\n${lineas}`;
+}
+
+export function generarRespuestaMock(
+  query: string,
+  chunks: Chunk[],
+  properties: Property[],
+  ctx: CtxRespuesta,
+): string {
   const topEsInmueble = chunks[0]?.metadata.categoria === "inmueble";
 
+  // Listings found and they lead → list them cleanly (cards render below).
   if (topEsInmueble && properties.length > 0) {
-    const n = properties.length;
-    const zonas = Array.from(new Set(properties.map((p) => p.zona)));
-    const zonaTxt = zonas.length === 1 ? ` en ${zonas[0]}` : "";
-    const cabecera =
-      n === 1
-        ? `He encontrado 1 inmueble que encaja${zonaTxt}:`
-        : `He encontrado ${n} inmuebles que encajan${zonaTxt}:`;
-    const lineas = properties
-      .map((p) => `• ${p.titulo} — ${formatearPrecio(p.precio)} · ${p.m2} m² · ${p.habitaciones} hab · ${p.disponibilidad}`)
-      .join("\n");
-    return `${cabecera}\n${lineas}\n\nTienes las fichas completas debajo. (Respuesta generada en modo local a partir del catálogo, sin inventar datos.)`;
+    return listar(properties, ctx, query);
   }
 
-  // Non-property answer: surface the most relevant retrieved passage, trimmed.
-  const top = chunks[0];
-  const texto = top.texto.length > 600 ? top.texto.slice(0, 600) + "…" : top.texto;
-  return `${texto}\n\n(Respuesta anclada a: ${top.metadata.fuente}. Modo local, sin inventar datos.)`;
+  // The visitor asked for listings but none match → say so plainly. NEVER dump
+  // the neighbourhood description here (that only belongs to zone questions).
+  // Only when there was a REAL constraint (zona or a hard filter); a bare "piso"
+  // in a non-search question ("¿puedo tener un perro en el piso?") falls through
+  // to the sensible no-data reply below, not to "no listings match".
+  if (ctx.pediaListado && properties.length === 0 && (ctx.zona != null || ctx.hayFiltro)) {
+    const donde = ctx.zona ? ` en ${ctx.zona}` : "";
+    return `Ahora mismo no tengo ningún inmueble${donde} que encaje con esos criterios. Si quieres, un agente puede avisarte en cuanto entre algo así, o puedes ajustar la búsqueda.`;
+  }
+
+  // Zone / process / FAQ knowledge → surface the most relevant passage, trimmed.
+  if (chunks.length > 0) {
+    const top = chunks[0];
+    return top.texto.length > 600 ? top.texto.slice(0, 600) + "…" : top.texto;
+  }
+
+  // Nothing in the data. Sensible, warm redirect + agent offer (a pet policy,
+  // for instance, depends on each listing — not a flat "no data").
+  return "Eso no está en la información que manejo; según el caso puede depender del inmueble. Si quieres, puedo ponerte en contacto con un agente que te lo confirme. ¿Te ayudo con los pisos, las zonas o el proceso de compra o alquiler?";
 }
 
 /* ---- LIVE generation: gpt-4o-mini via fetch. ---- */
@@ -79,8 +120,13 @@ export async function generarRespuestaLive(query: string, chunks: Chunk[]): Prom
   return (json.choices?.[0]?.message?.content ?? "").trim();
 }
 
-export async function generarRespuesta(query: string, chunks: Chunk[], properties: Property[]): Promise<string> {
+export async function generarRespuesta(
+  query: string,
+  chunks: Chunk[],
+  properties: Property[],
+  ctx: CtxRespuesta,
+): Promise<string> {
   return MODE === "live"
     ? generarRespuestaLive(query, chunks)
-    : generarRespuestaMock(query, chunks, properties);
+    : generarRespuestaMock(query, chunks, properties, ctx);
 }

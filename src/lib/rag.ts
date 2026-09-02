@@ -1,6 +1,6 @@
 import type { ChatResponse, Property } from "./types";
 import { MAX_PROPERTIES_IN_ANSWER } from "./config";
-import { retrieve } from "./retrieval";
+import { retrieve, contextoConsulta } from "./retrieval";
 import { generarRespuesta } from "./generate";
 import { clasificar } from "./intent";
 import { chunkToProperty, chunkToSource } from "./text";
@@ -28,7 +28,7 @@ export async function answerQuestion(query: string): Promise<ChatResponse> {
     }
   }
 
-  const answer = await generarRespuesta(query, chunks, properties);
+  const answer = await generarRespuesta(query, chunks, properties, contextoConsulta(query));
 
   // Provenance only, de-duplicated: one entry per (document, type), not one per
   // retrieved chunk. Avoids "Catálogo · Catálogo · Catálogo" and leaks nothing.

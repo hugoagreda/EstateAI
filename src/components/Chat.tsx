@@ -23,7 +23,7 @@ interface BotMsg {
 type Msg = UserMsg | BotMsg;
 
 const MAX_CHARS = 500;
-const MAX_QUESTIONS = 5;
+const MAX_QUESTIONS = 1000;
 const STORAGE_KEY = "estateai-demo-questions";
 
 export function Chat() {

@@ -24,7 +24,12 @@ export function tokenizar(texto: string): string[] {
     .filter((t) => t.length > 1 && !STOPWORDS.has(t));
 }
 
-/** Turn an "inmueble" chunk into a Property for the card UI. */
+/** Turn an "inmueble" chunk into a Property for the card UI.
+ *  ⚠️ SECURITY (F12 whitelist): this is the ONLY shape sent to the browser for a
+ *  listing. Fields are listed EXPLICITLY here — never spread the raw metadata.
+ *  In `live`, when the client DB may hold internal fields (owner phone, agency
+ *  margin, private notes…), they must NOT be added here; only public fields go
+ *  out, so nothing sensitive can leak through the Network tab. */
 export function chunkToProperty(chunk: Chunk): Property | null {
   const m = chunk.metadata;
   if (m.categoria !== "inmueble" || m.id_inmueble == null) return null;
