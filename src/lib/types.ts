@@ -57,6 +57,7 @@ export interface SourceRef {
 export interface ChatResponse {
   answer: string;
   properties: Property[];
+  alternatives: Property[]; // near matches (block 2); empty when not applicable
   sources: SourceRef[];
 }
 

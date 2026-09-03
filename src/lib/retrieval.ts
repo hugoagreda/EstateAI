@@ -1,7 +1,7 @@
 import type { Chunk } from "./types";
 import { CHUNKS, ZONAS } from "./chunks";
 import { normalizar, tokenizar } from "./text";
-import { parseFiltros, pasaFiltros, hayFiltroDeListado, availRank } from "./filters";
+import { parseFiltros, pasaFiltros, hayFiltroDeListado, availRank, penalizacionCercania } from "./filters";
 import {
   MODE, TOP_K, MODELO_EMBEDDING, OPENAI_API_KEY,
   SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY,
@@ -23,6 +23,7 @@ const BOOST_CATEGORIA = 1.5;   // query intent matches chunk category
 const BOOST_TITULO = 2.0;      // token appears in a property title
 const BOOST_DISPONIBLE = 0.5;  // tie-breaker for available listings (only if already relevant)
 const BOOST_BARRIO_INTENT = 6; // "cómo es el barrio X" → barrio chunk leads over pisos
+const BOOST_FAQ_PREGUNTA = 4;  // query overlaps a FAQ's QUESTION line → that FAQ wins
 
 // Domain words so common across the corpus that a single overlap on them is NOT
 // evidence of relevance ("piso" appears in every listing). They still add to the
@@ -44,6 +45,7 @@ const BROWSE_WORDS = new Set<string>([
   "ver", "muestrame", "muestra", "ensename", "ensena", "mostrar", "ensenar",
   "listado", "lista", "catalogo", "oferta", "ofertas", "disponible", "disponibles",
   "todos", "todas", "opciones", "cuales", "cuantos", "cuantas",
+  "ahora", "mismo", "actualmente", "ya", "actual", "hay",   // relleno: no bloquean el browse
 ]);
 // Filter keywords: they express a constraint, not knowledge-base content. They
 // must NOT qualify a chunk (e.g. "hasta" appears in the proceso text, which used
@@ -122,15 +124,15 @@ function distancia(a: string, b: string): number {
   return row[n];
 }
 
-// Typo tolerance with a deliberately tight threshold: short words demand an
-// exact match (they collide too easily), longer words allow 1–2 edits. Lets
-// "chanberi"→"chamberi" and "aras"→"arras" through without loosening the gate.
+// Typo tolerance: only edit distance 1 (and min length 5). Los typos reales de
+// zonas/términos son de 1 edición (chanberi→chamberi, aras→arras). Permitir 2
+// producía falsos como "contacto"→"contrato" (distancia 2), que desviaban la
+// respuesta al chunk equivocado. Distancia 1 = seguro y suficiente.
 function casiIgual(a: string, b: string): boolean {
   if (a === b) return true;
   const len = Math.max(a.length, b.length);
   if (len < 5) return false;             // too short → exact only
-  const tol = len >= 8 ? 2 : 1;
-  return distancia(a, b) <= tol;
+  return distancia(a, b) <= 1;
 }
 
 function detectarZona(qNorm: string, qTokens: string[]): string | null {
@@ -204,6 +206,18 @@ function scoreLexico(
     for (const qt of qTokens) if (titSet.has(qt)) score += BOOST_TITULO;
     // tie-breaker only, applied after the chunk already qualified
     if ((m.disponibilidad ?? "").toLowerCase() === "disponible") score += BOOST_DISPONIBLE;
+  }
+
+  // FAQ: reward overlap with the QUESTION line ("P: …"), not just any text, so the
+  // right FAQ wins over a proceso chunk that shares a word by chance ("gastos",
+  // "contacto"). Only specific tokens count.
+  if (m.categoria === "faq") {
+    const pregSet = new Set(tokenizar(chunk.texto.split("\n")[0]));
+    for (const qt of qTokens) {
+      if (pregSet.has(qt) && !GENERIC_TERMS.has(qt) && !BROWSE_WORDS.has(qt) && !FILTER_WORDS.has(qt)) {
+        score += BOOST_FAQ_PREGUNTA;
+      }
+    }
   }
 
   return score;
@@ -303,4 +317,25 @@ export function contextoConsulta(query: string): { zona: string | null; pediaLis
   const pediaListado =
     esBrowse(qTokens) || hayFiltro || intentCategoria(qTokens.join(" ")) === "inmueble";
   return { zona, pediaListado, hayFiltro };
+}
+
+/** Block-2 "near matches": the closest listings that are NOT exact matches,
+ *  keeping the zona hard (never relaxed). Returns up to `max`, closest first.
+ *  Only meaningful when there was a filter or zona; otherwise empty. */
+export function buscarAlternativas(query: string, exactIds: Set<number>, max = 3): Chunk[] {
+  const qNorm = normalizar(query);
+  const qTokens = corregir(tokenizar(query));
+  const zona = detectarZona(qNorm, qTokens);
+  const filtros = parseFiltros(qNorm);
+  filtros.zona = zona;
+  if (!hayFiltroDeListado(filtros) && zona == null) return [];
+
+  return CHUNKS
+    .filter((c) => c.metadata.categoria === "inmueble")
+    .filter((c) => !exactIds.has(c.metadata.id_inmueble ?? -1))
+    .map((c) => ({ c, pen: penalizacionCercania(c.metadata, filtros) }))
+    .filter((x) => Number.isFinite(x.pen) && x.pen > 0)   // finite = same zona; >0 = not exact
+    .sort((a, b) => (a.pen - b.pen) || (availRank(a.c.metadata) - availRank(b.c.metadata)))
+    .slice(0, max)
+    .map((x) => x.c);
 }

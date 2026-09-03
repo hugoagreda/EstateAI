@@ -1,10 +1,10 @@
-import { Chat } from "@/components/Chat";
+import { Chat } from "@/components/chat";
 import {
   Header,
   HowItWorks,
   DataSources,
   Footer,
-} from "@/components/Layout";
+} from "@/components/layout";
 import { CHUNKS, ZONAS } from "@/lib/chunks";
 
 export default function Page() {

@@ -16,24 +16,33 @@ export interface Canned {
 // Full-message greetings only. Anchored (^…$) so "hola, ¿tenéis pisos?" does NOT
 // match and falls through to a real answer — the greeting must be the whole message.
 const RE_SALUDO =
-  /^(hola|holi|ola|buenas|buenos dias|buenas tardes|buenas noches|hey|ey|saludos)(\s+(que tal|como estas|como va|como andas))?[\s!?.]*$/;
+  /^(hola|holi|ola|buenas|buenos dias|buenas tardes|buenas noches|hey|ey|saludos)([ ]+(hola|buenas|buenos dias|buenas tardes|buenas noches))?([ ]+(que tal|que tal todo|como estas|como va|como andas|como te va|todo bien|como estamos|como andamos|gente|a todos))?[\s!?.]*$/;
 const RE_SALUDO_2 =
-  /^(que tal|que tal estas|como estas|como va|como andas|como te va)[\s!?.]*$/;
+  /^(que tal|que tal todo|que tal estas|como estas|como va|como andas|como te va|todo bien|como estamos)[\s!?.]*$/;
 
 // "About the bot / help" — specific phrases, so "¿qué pisos puedes enseñarme?"
 // (which contains "que" and "puedes") does NOT trigger it.
 const RE_META =
-  /\b(quien eres|que eres|eres un bot|eres una ia|eres un robot|eres humano|que puedes hacer|que sabes hacer|que haces|para que sirves|como funcionas|que es esto|en que me puedes ayudar|ayuda)\b/;
+  /\b(quien eres|que eres|eres un bot|eres una ia|eres un robot|eres humano|que puedes hacer|que sabes hacer|que haces|para que sirves|como funcionas|que es esto|en que (me )?puedes ayudar|me puedes ayudar|puedes ayudarme|me ayudas|ayudame|ayudarme|necesito ayuda|ayuda)\b/;
 
-// Thanks / goodbye as a full message.
+// Thanks / goodbye. Allow trailing filler ("gracias por todo", "muchas gracias
+// crack", "ok adios") without turning into a listing search.
 const RE_CORTESIA =
-  /^(gracias|muchas gracias|mil gracias|ok gracias|vale gracias|perfecto gracias|adios|hasta luego|hasta pronto|chao|nos vemos)[\s!?.]*$/;
+  /^(muchas gracias|mil gracias|ok gracias|vale gracias|perfecto gracias|gracias|adios|hasta luego|hasta pronto|chao|chau|nos vemos|hasta la proxima)([ ]+(por todo|a ti|de nada|crack|majo|igualmente|entonces))?[\s!?.]*$/;
 
-// Gibberish: letters-only form has no vowel (real Spanish always has vowels).
+// Gibberish: no vowels at all, OR any word-length token that's all consonants
+// ("kjsdfh"), OR only a single repeated letter ("aaa", "eee"). Real Spanish words
+// of 4+ letters always contain a vowel and aren't one letter repeated.
 function esIninteligible(qNorm: string): boolean {
   const soloLetras = qNorm.replace(/[^a-z]/g, "");
-  if (soloLetras.length < 2) return true;          // empty / symbols / single char
-  return !/[aeiou]/.test(soloLetras);              // "asdfgh", "jkjk" → true
+  if (soloLetras.length < 2) return true;              // empty / symbols / single char
+  if (/^(.)\1+$/.test(soloLetras)) return true;        // "aaa", "eee", "zzz"
+  if (!/[aeiou]/.test(soloLetras)) return true;        // "asdfgh", "jkjk"
+  for (const t of qNorm.split(/\s+/)) {
+    const l = t.replace(/[^a-z]/g, "");
+    if (l.length >= 4 && !/[aeiou]/.test(l)) return true; // "kjsdfh askjdfh"
+  }
+  return false;
 }
 
 const TPL_SALUDO =
@@ -62,6 +71,8 @@ const TPL_SEGURIDAD =
 export function clasificar(query: string): Canned | null {
   const qNorm = normalizar(query);
   if (!qNorm) return { answer: TPL_REFORMULAR };
+  // Punctuation-stripped form so "buenos días, qué tal todo" matches greetings.
+  const q = qNorm.replace(/[.,!?¿¡;:]/g, " ").replace(/\s+/g, " ").trim();
 
   if (RE_INJECCION.test(qNorm)) {
     // Server-side log (the "registro"): visible in Vercel/Node logs, never to the user.
@@ -69,10 +80,10 @@ export function clasificar(query: string): Canned | null {
     return { answer: TPL_SEGURIDAD };
   }
 
-  if (RE_SALUDO.test(qNorm) || RE_SALUDO_2.test(qNorm)) return { answer: TPL_SALUDO };
-  if (RE_META.test(qNorm)) return { answer: TPL_META };
-  if (RE_CORTESIA.test(qNorm)) return { answer: TPL_CORTESIA };
-  if (esIninteligible(qNorm)) return { answer: TPL_REFORMULAR };
+  if (RE_SALUDO.test(q) || RE_SALUDO_2.test(q)) return { answer: TPL_SALUDO };
+  if (RE_META.test(q)) return { answer: TPL_META };
+  if (RE_CORTESIA.test(q)) return { answer: TPL_CORTESIA };
+  if (esIninteligible(q)) return { answer: TPL_REFORMULAR };
 
   return null; // a real domain question → proceed to retrieval
 }

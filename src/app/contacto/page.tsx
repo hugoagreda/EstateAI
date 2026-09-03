@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Header, Footer } from "@/components/Layout";
+import { Header, Footer } from "@/components/layout";
 
 export default function ContactPage() {
   return (

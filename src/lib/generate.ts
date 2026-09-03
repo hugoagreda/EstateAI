@@ -39,6 +39,12 @@ function elegir<T>(opciones: T[], semilla: string): T {
   return opciones[h % opciones.length];
 }
 
+function bullets(properties: Property[]): string {
+  return properties
+    .map((p) => `• ${p.titulo} — ${formatearPrecio(p.precio)} · ${p.m2} m² · ${p.habitaciones} hab · ${p.disponibilidad}`)
+    .join("\n");
+}
+
 function listar(properties: Property[], ctx: CtxRespuesta, query: string): string {
   const n = properties.length;
   const donde = ctx.zona ? ` en ${ctx.zona}` : "";
@@ -55,30 +61,42 @@ function listar(properties: Property[], ctx: CtxRespuesta, query: string): strin
            `Estos ${n}${donde} encajan con tu búsqueda:`],
           query,
         );
-  const lineas = properties
-    .map((p) => `• ${p.titulo} — ${formatearPrecio(p.precio)} · ${p.m2} m² · ${p.habitaciones} hab · ${p.disponibilidad}`)
-    .join("\n");
-  return `${cabecera}\n${lineas}`;
+  return `${cabecera}\n${bullets(properties)}`;
+}
+
+// Two blocks: exact matches (block 1) + near matches (block 2), clearly labelled
+// and separated so the visitor never confuses "exact" with "similar".
+function componer(exact: Property[], alternatives: Property[], ctx: CtxRespuesta, query: string): string {
+  const partes: string[] = [];
+  const donde = ctx.zona ? ` en ${ctx.zona}` : "";
+
+  if (exact.length > 0) partes.push(listar(exact, ctx, query));
+
+  if (alternatives.length > 0) {
+    const intro = exact.length > 0
+      ? `Con esos criterios exactos no tengo más, pero por si te encaja, esto es lo más parecido${donde}:`
+      : `No tengo exactamente eso, pero esto es lo más parecido${donde}:`;
+    partes.push(`${intro}\n${bullets(alternatives)}`);
+  }
+  return partes.join("\n\n");
 }
 
 export function generarRespuestaMock(
   query: string,
   chunks: Chunk[],
   properties: Property[],
+  alternatives: Property[],
   ctx: CtxRespuesta,
 ): string {
   const topEsInmueble = chunks[0]?.metadata.categoria === "inmueble";
 
-  // Listings found and they lead → list them cleanly (cards render below).
-  if (topEsInmueble && properties.length > 0) {
-    return listar(properties, ctx, query);
+  // Listings to show: exact block, near-matches block, or both.
+  if ((topEsInmueble && properties.length > 0) || alternatives.length > 0) {
+    return componer(properties, alternatives, ctx, query);
   }
 
-  // The visitor asked for listings but none match → say so plainly. NEVER dump
-  // the neighbourhood description here (that only belongs to zone questions).
-  // Only when there was a REAL constraint (zona or a hard filter); a bare "piso"
-  // in a non-search question ("¿puedo tener un perro en el piso?") falls through
-  // to the sensible no-data reply below, not to "no listings match".
+  // Asked for listings, nothing exact AND nothing close → say so plainly (no
+  // neighbourhood dump). Only when there was a real constraint.
   if (ctx.pediaListado && properties.length === 0 && (ctx.zona != null || ctx.hayFiltro)) {
     const donde = ctx.zona ? ` en ${ctx.zona}` : "";
     return `Ahora mismo no tengo ningún inmueble${donde} que encaje con esos criterios. Si quieres, un agente puede avisarte en cuanto entre algo así, o puedes ajustar la búsqueda.`;
@@ -90,9 +108,9 @@ export function generarRespuestaMock(
     return top.texto.length > 600 ? top.texto.slice(0, 600) + "…" : top.texto;
   }
 
-  // Nothing in the data. Sensible, warm redirect + agent offer (a pet policy,
-  // for instance, depends on each listing — not a flat "no data").
-  return "Eso no está en la información que manejo; según el caso puede depender del inmueble. Si quieres, puedo ponerte en contacto con un agente que te lo confirme. ¿Te ayudo con los pisos, las zonas o el proceso de compra o alquiler?";
+  // Nothing in the data. Neutral, warm redirect + agent offer (works for a pet
+  // policy, a payment method, or anything off-catalogue without sounding odd).
+  return "Eso no lo tengo en la información de la agencia. Si te viene bien, puedo ponerte en contacto con un agente que te lo aclare. ¿Te echo una mano con los pisos, las zonas o el proceso de compra o alquiler?";
 }
 
 /* ---- LIVE generation: gpt-4o-mini via fetch. ---- */
@@ -124,9 +142,10 @@ export async function generarRespuesta(
   query: string,
   chunks: Chunk[],
   properties: Property[],
+  alternatives: Property[],
   ctx: CtxRespuesta,
 ): Promise<string> {
   return MODE === "live"
     ? generarRespuestaLive(query, chunks)
-    : generarRespuestaMock(query, chunks, properties, ctx);
+    : generarRespuestaMock(query, chunks, properties, alternatives, ctx);
 }

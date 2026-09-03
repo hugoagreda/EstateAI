@@ -182,3 +182,26 @@ export function pasaFiltros(m: ChunkMetadata, f: Filtros): boolean {
 export function availRank(m: ChunkMetadata): number {
   return normalizar(m.disponibilidad ?? "") === "disponible" ? 0 : 1;
 }
+
+/** How FAR a listing is from what was asked (for block-2 "near matches").
+ *  0 = exact match. Higher = further. Infinity = different zona (zona is never
+ *  relaxed). Only soft criteria (precio/habitaciones/tipo/estado/extras/m²/baños)
+ *  add distance, weighted so price and rooms matter more than a missing extra. */
+export function penalizacionCercania(m: ChunkMetadata, f: Filtros): number {
+  if (f.zona != null && normalizar(m.zona ?? "") !== normalizar(f.zona)) return Infinity;
+  let p = 0;
+  const precio = m.precio ?? 0;
+  if (f.precioMax != null && precio > f.precioMax) p += ((precio - f.precioMax) / f.precioMax) * 3;
+  if (f.precioMin != null && precio < f.precioMin) p += ((f.precioMin - precio) / f.precioMin) * 3;
+  if (f.habitacionesMin != null && (m.habitaciones ?? 0) < f.habitacionesMin) p += (f.habitacionesMin - (m.habitaciones ?? 0)) * 1.5;
+  if (f.banosMin != null && (m.banos ?? 0) < f.banosMin) p += (f.banosMin - (m.banos ?? 0)) * 1;
+  if (f.m2Max != null && (m.m2 ?? 0) > f.m2Max) p += (((m.m2 ?? 0) - f.m2Max) / f.m2Max) * 2;
+  if (f.m2Min != null && (m.m2 ?? 0) < f.m2Min) p += ((f.m2Min - (m.m2 ?? 0)) / f.m2Min) * 2;
+  if (f.tipo != null && normalizar(m.tipo ?? "") !== f.tipo) p += 2;
+  if (f.estado != null && normalizar(m.estado ?? "") !== f.estado) p += 1;
+  if (f.extras.length) {
+    const pe = (m.extras ?? []).map(normalizar);
+    for (const e of f.extras) if (!pe.includes(e)) p += 1.5;
+  }
+  return p;
+}

@@ -609,7 +609,7 @@
   },
   {
     "id": "oper_1",
-    "texto": "1. BÚSQUEDA DEL INMUEBLE\n\nEl comprador define sus necesidades y presupuesto antes de iniciar la búsqueda.\n\nAspectos habituales:\n- ubicación\n- precio\n- tamaño\n- estado del inmueble\n- transporte y servicios\n- gastos asociados\n\nLa búsqueda puede realizarse mediante agencias inmobiliarias, portales o particulares.\n\nTiempo aproximado:\n- desde varios días hasta varios meses",
+    "texto": "1. BÚSQUEDA DEL INMUEBLE\r\n\r\nEl comprador define sus necesidades y presupuesto antes de iniciar la búsqueda.\r\n\r\nAspectos habituales:\r\n- ubicación\r\n- precio\r\n- tamaño\r\n- estado del inmueble\r\n- transporte y servicios\r\n- gastos asociados\r\n\r\nLa búsqueda puede realizarse mediante agencias inmobiliarias, portales o particulares.\r\n\r\nTiempo aproximado:\r\n- desde varios días hasta varios meses",
     "metadata": {
       "categoria": "proceso",
       "fuente": "operaciones_inmobiliarias.txt",
@@ -618,7 +618,7 @@
   },
   {
     "id": "oper_2",
-    "texto": "2. VISITA AL INMUEBLE\n\nUna vez seleccionado un inmueble de interés, se realiza una visita presencial o virtual.\n\nDurante la visita se recomienda revisar:\n- estado general de la vivienda\n- instalaciones\n- orientación y luminosidad\n- zonas comunes\n- posibles reformas necesarias\n- situación legal conocida\n\nEs habitual realizar varias visitas antes de tomar una decisión.\n\nTiempo aproximado:\n- entre 1 y 15 días",
+    "texto": "2. VISITA AL INMUEBLE\r\n\r\nUna vez seleccionado un inmueble de interés, se realiza una visita presencial o virtual.\r\n\r\nDurante la visita se recomienda revisar:\r\n- estado general de la vivienda\r\n- instalaciones\r\n- orientación y luminosidad\r\n- zonas comunes\r\n- posibles reformas necesarias\r\n- situación legal conocida\r\n\r\nEs habitual realizar varias visitas antes de tomar una decisión.\r\n\r\nTiempo aproximado:\r\n- entre 1 y 15 días",
     "metadata": {
       "categoria": "proceso",
       "fuente": "operaciones_inmobiliarias.txt",
@@ -627,7 +627,7 @@
   },
   {
     "id": "oper_3",
-    "texto": "3. RESERVA DE LA VIVIENDA\n\nCuando el comprador decide avanzar, puede realizar una reserva económica para retirar temporalmente el inmueble del mercado.\n\nLa reserva suele incluir:\n- datos de comprador y vendedor\n- precio acordado\n- plazo para firmar arras\n- importe entregado\n\nLa cantidad entregada normalmente se descuenta del precio final.\n\nTiempo aproximado:\n- entre 24 y 72 horas",
+    "texto": "3. RESERVA DE LA VIVIENDA\r\n\r\nCuando el comprador decide avanzar, puede realizar una reserva económica para retirar temporalmente el inmueble del mercado.\r\n\r\nLa reserva suele incluir:\r\n- datos de comprador y vendedor\r\n- precio acordado\r\n- plazo para firmar arras\r\n- importe entregado\r\n\r\nLa cantidad entregada normalmente se descuenta del precio final.\r\n\r\nTiempo aproximado:\r\n- entre 24 y 72 horas",
     "metadata": {
       "categoria": "proceso",
       "fuente": "operaciones_inmobiliarias.txt",
@@ -636,7 +636,7 @@
   },
   {
     "id": "oper_4",
-    "texto": "4. CONTRATO DE ARRAS\n\nEl contrato de arras es un acuerdo privado entre comprador y vendedor donde ambas partes se comprometen a formalizar la compraventa.\n\nSuele incluir:\n- precio final\n- forma de pago\n- plazos\n- penalizaciones\n- reparto de gastos\n\nEl comprador suele entregar entre un 5% y un 10% del precio del inmueble.\n\nTiempo aproximado:\n- entre 1 y 3 semanas",
+    "texto": "4. CONTRATO DE ARRAS\r\n\r\nEl contrato de arras es un acuerdo privado entre comprador y vendedor donde ambas partes se comprometen a formalizar la compraventa.\r\n\r\nSuele incluir:\r\n- precio final\r\n- forma de pago\r\n- plazos\r\n- penalizaciones\r\n- reparto de gastos\r\n\r\nEl comprador suele entregar entre un 5% y un 10% del precio del inmueble.\r\n\r\nTiempo aproximado:\r\n- entre 1 y 3 semanas",
     "metadata": {
       "categoria": "proceso",
       "fuente": "operaciones_inmobiliarias.txt",
@@ -645,7 +645,7 @@
   },
   {
     "id": "oper_5",
-    "texto": "5. SOLICITUD DE HIPOTECA\n\nSi el comprador necesita financiación, inicia el proceso con una entidad bancaria.\n\nEl banco analiza:\n- ingresos\n- estabilidad laboral\n- endeudamiento\n- historial financiero\n- tasación del inmueble\n\nTras la aprobación, el banco emite la oferta hipotecaria.\n\nDocumentación habitual:\n- DNI o NIE\n- nóminas\n- contrato laboral\n- declaración de la renta\n- vida laboral\n- extractos bancarios\n- documentación del inmueble\n\nTiempo aproximado:\n- entre 2 y 6 semanas",
+    "texto": "5. SOLICITUD DE HIPOTECA\r\n\r\nSi el comprador necesita financiación, inicia el proceso con una entidad bancaria.\r\n\r\nEl banco analiza:\r\n- ingresos\r\n- estabilidad laboral\r\n- endeudamiento\r\n- historial financiero\r\n- tasación del inmueble\r\n\r\nTras la aprobación, el banco emite la oferta hipotecaria.\r\n\r\nDocumentación habitual:\r\n- DNI o NIE\r\n- nóminas\r\n- contrato laboral\r\n- declaración de la renta\r\n- vida laboral\r\n- extractos bancarios\r\n- documentación del inmueble\r\n\r\nTiempo aproximado:\r\n- entre 2 y 6 semanas",
     "metadata": {
       "categoria": "proceso",
       "fuente": "operaciones_inmobiliarias.txt",
@@ -654,7 +654,7 @@
   },
   {
     "id": "oper_6",
-    "texto": "6. FIRMA ANTE NOTARIO\n\nLa compraventa se formaliza mediante escritura pública ante notario.\n\nEn la firma participan:\n- comprador\n- vendedor\n- entidad bancaria si existe hipoteca\n- notario\n\nEn este momento se realiza el pago y se firma la escritura de compraventa y la hipoteca si corresponde.\n\nGastos habituales:\n- notaría\n- registro\n- impuestos\n- gestoría\n- tasación\n\nTiempo aproximado:\n- 1 día",
+    "texto": "6. FIRMA ANTE NOTARIO\r\n\r\nLa compraventa se formaliza mediante escritura pública ante notario.\r\n\r\nEn la firma participan:\r\n- comprador\r\n- vendedor\r\n- entidad bancaria si existe hipoteca\r\n- notario\r\n\r\nEn este momento se realiza el pago y se firma la escritura de compraventa y la hipoteca si corresponde.\r\n\r\nGastos habituales:\r\n- notaría\r\n- registro\r\n- impuestos\r\n- gestoría\r\n- tasación\r\n\r\nTiempo aproximado:\r\n- 1 día",
     "metadata": {
       "categoria": "proceso",
       "fuente": "operaciones_inmobiliarias.txt",
@@ -663,7 +663,7 @@
   },
   {
     "id": "oper_7",
-    "texto": "7. INSCRIPCIÓN EN EL REGISTRO\n\nTras la firma, la escritura se presenta en el Registro de la Propiedad para inscribir oficialmente al nuevo propietario.\n\nEste trámite aporta seguridad jurídica sobre la titularidad del inmueble.\n\nTiempo aproximado:\n- entre 2 y 8 semanas",
+    "texto": "7. INSCRIPCIÓN EN EL REGISTRO\r\n\r\nTras la firma, la escritura se presenta en el Registro de la Propiedad para inscribir oficialmente al nuevo propietario.\r\n\r\nEste trámite aporta seguridad jurídica sobre la titularidad del inmueble.\r\n\r\nTiempo aproximado:\r\n- entre 2 y 8 semanas",
     "metadata": {
       "categoria": "proceso",
       "fuente": "operaciones_inmobiliarias.txt",
@@ -672,7 +672,7 @@
   },
   {
     "id": "oper_8",
-    "texto": "8. ENTREGA DE LLAVES\n\nUna vez firmada la operación y completados los pagos, se realiza la entrega de llaves.\n\nHabitualmente también se entregan:\n- mandos\n- documentación técnica\n- certificados\n- recibos y suministros\n\nEn este momento el comprador puede tomar posesión de la vivienda.\n\n\n--------------------------------------------------\nPROCESO DE ALQUILER DE UNA VIVIENDA\n--------------------------------------------------",
+    "texto": "8. ENTREGA DE LLAVES\r\n\r\nUna vez firmada la operación y completados los pagos, se realiza la entrega de llaves.\r\n\r\nHabitualmente también se entregan:\r\n- mandos\r\n- documentación técnica\r\n- certificados\r\n- recibos y suministros\r\n\r\nEn este momento el comprador puede tomar posesión de la vivienda.\r\n\r\n\r\n--------------------------------------------------\r\nPROCESO DE ALQUILER DE UNA VIVIENDA\r\n--------------------------------------------------",
     "metadata": {
       "categoria": "proceso",
       "fuente": "operaciones_inmobiliarias.txt",
@@ -681,7 +681,7 @@
   },
   {
     "id": "oper_9",
-    "texto": "1. BÚSQUEDA DEL INMUEBLE\n\nEl inquilino selecciona viviendas según:\n- zona\n- precio\n- duración del contrato\n- características del inmueble",
+    "texto": "1. BÚSQUEDA DEL INMUEBLE\r\n\r\nEl inquilino selecciona viviendas según:\r\n- zona\r\n- precio\r\n- duración del contrato\r\n- características del inmueble",
     "metadata": {
       "categoria": "proceso",
       "fuente": "operaciones_inmobiliarias.txt",
@@ -690,7 +690,7 @@
   },
   {
     "id": "oper_10",
-    "texto": "2. VISITA\n\nSe revisa el estado de la vivienda y las condiciones del alquiler.",
+    "texto": "2. VISITA\r\n\r\nSe revisa el estado de la vivienda y las condiciones del alquiler.",
     "metadata": {
       "categoria": "proceso",
       "fuente": "operaciones_inmobiliarias.txt",
@@ -699,7 +699,7 @@
   },
   {
     "id": "oper_11",
-    "texto": "3. PRESENTACIÓN DE DOCUMENTACIÓN\n\nEl propietario o la agencia suele solicitar:\n- DNI o NIE\n- contrato laboral\n- nóminas\n- declaración de la renta\n- aval o garantías adicionales",
+    "texto": "3. PRESENTACIÓN DE DOCUMENTACIÓN\r\n\r\nEl propietario o la agencia suele solicitar:\r\n- DNI o NIE\r\n- contrato laboral\r\n- nóminas\r\n- declaración de la renta\r\n- aval o garantías adicionales",
     "metadata": {
       "categoria": "proceso",
       "fuente": "operaciones_inmobiliarias.txt",
@@ -708,7 +708,7 @@
   },
   {
     "id": "oper_12",
-    "texto": "4. RESERVA\n\nEn algunos casos se entrega una señal para reservar el inmueble.",
+    "texto": "4. RESERVA\r\n\r\nEn algunos casos se entrega una señal para reservar el inmueble.",
     "metadata": {
       "categoria": "proceso",
       "fuente": "operaciones_inmobiliarias.txt",
@@ -717,7 +717,7 @@
   },
   {
     "id": "oper_13",
-    "texto": "5. FIRMA DEL CONTRATO DE ALQUILER\n\nEl contrato define:\n- renta mensual\n- duración\n- fianza\n- gastos incluidos\n- condiciones de uso\n\nLa fianza legal habitual equivale a un mes de renta.",
+    "texto": "5. FIRMA DEL CONTRATO DE ALQUILER\r\n\r\nEl contrato define:\r\n- renta mensual\r\n- duración\r\n- fianza\r\n- gastos incluidos\r\n- condiciones de uso\r\n\r\nLa fianza legal habitual equivale a un mes de renta.",
     "metadata": {
       "categoria": "proceso",
       "fuente": "operaciones_inmobiliarias.txt",
@@ -726,7 +726,7 @@
   },
   {
     "id": "oper_14",
-    "texto": "6. ENTREGA DE LLAVES\n\nTras la firma y el pago inicial, el inquilino recibe las llaves y accede a la vivienda.\n\nTiempo aproximado del proceso completo:\n- entre 3 días y 3 semanas\n\n\n--------------------------------------------------\nDOCUMENTACIÓN HABITUAL\n--------------------------------------------------\n\nPara compradores:\n- DNI o NIE\n- justificantes de ingresos\n- contrato laboral\n- extractos bancarios\n- declaración de la renta\n\nPara vendedores:\n- escritura de propiedad\n- nota simple\n- último recibo del IBI\n- certificado energético\n- certificado de deuda cero de comunidad\n- recibos de suministros\n\nPara alquileres:\n- documentación identificativa\n- justificantes económicos\n- referencias o avales según el caso\n\n\n--------------------------------------------------\nTIEMPOS APROXIMADOS DEL PROCESO DE COMPRA\n--------------------------------------------------\n\nBúsqueda:\n- días o meses\n\nVisitas:\n- 1 a 15 días\n\nReserva:\n- 1 a 3 días\n\nArras:\n- 1 a 3 semanas\n\nHipoteca:\n- 2 a 6 semanas\n\nFirma notarial:\n- 1 día\n\nRegistro:\n- 2 a 8 semanas\n\n\n--------------------------------------------------\nRECOMENDACIONES GENERALES\n--------------------------------------------------\n\n- Revisar siempre la situación legal del inmueble.\n- Comparar opciones de financiación.\n- Solicitar asesoramiento profesional.\n- Leer detenidamente todos los contratos antes de firmar.\n- Calcular los gastos adicionales asociados a la operación.",
+    "texto": "6. ENTREGA DE LLAVES\r\n\r\nTras la firma y el pago inicial, el inquilino recibe las llaves y accede a la vivienda.\r\n\r\nTiempo aproximado del proceso completo:\r\n- entre 3 días y 3 semanas\r\n\r\n\r\n--------------------------------------------------\r\nDOCUMENTACIÓN HABITUAL\r\n--------------------------------------------------\r\n\r\nPara compradores:\r\n- DNI o NIE\r\n- justificantes de ingresos\r\n- contrato laboral\r\n- extractos bancarios\r\n- declaración de la renta\r\n\r\nPara vendedores:\r\n- escritura de propiedad\r\n- nota simple\r\n- último recibo del IBI\r\n- certificado energético\r\n- certificado de deuda cero de comunidad\r\n- recibos de suministros\r\n\r\nPara alquileres:\r\n- documentación identificativa\r\n- justificantes económicos\r\n- referencias o avales según el caso\r\n\r\n\r\n--------------------------------------------------\r\nTIEMPOS APROXIMADOS DEL PROCESO DE COMPRA\r\n--------------------------------------------------\r\n\r\nBúsqueda:\r\n- días o meses\r\n\r\nVisitas:\r\n- 1 a 15 días\r\n\r\nReserva:\r\n- 1 a 3 días\r\n\r\nArras:\r\n- 1 a 3 semanas\r\n\r\nHipoteca:\r\n- 2 a 6 semanas\r\n\r\nFirma notarial:\r\n- 1 día\r\n\r\nRegistro:\r\n- 2 a 8 semanas\r\n\r\n\r\n--------------------------------------------------\r\nRECOMENDACIONES GENERALES\r\n--------------------------------------------------\r\n\r\n- Revisar siempre la situación legal del inmueble.\r\n- Comparar opciones de financiación.\r\n- Solicitar asesoramiento profesional.\r\n- Leer detenidamente todos los contratos antes de firmar.\r\n- Calcular los gastos adicionales asociados a la operación.",
     "metadata": {
       "categoria": "proceso",
       "fuente": "operaciones_inmobiliarias.txt",
@@ -815,7 +815,7 @@
   },
   {
     "id": "faq_1",
-    "texto": "P: ¿Quiénes somos?\nR: Somos una empresa dedicada a la gestión inmobiliaria de compraventa y alquiler de inmuebles residenciales y comerciales. Ofrecemos acompañamiento durante las distintas fases de la operación inmobiliaria.",
+    "texto": "P: ¿Quiénes somos?\r\nR: Somos una empresa dedicada a la gestión inmobiliaria de compraventa y alquiler de inmuebles residenciales y comerciales. Ofrecemos acompañamiento durante las distintas fases de la operación inmobiliaria.",
     "metadata": {
       "categoria": "faq",
       "fuente": "faqs.txt",
@@ -824,7 +824,7 @@
   },
   {
     "id": "faq_2",
-    "texto": "P: ¿Qué servicios ofrecemos?\nR: Gestionamos venta y alquiler de viviendas, valoración de inmuebles, publicación de anuncios, organización de visitas y apoyo documental durante operaciones inmobiliarias.",
+    "texto": "P: ¿Qué servicios ofrecemos?\r\nR: Gestionamos venta y alquiler de viviendas, valoración de inmuebles, publicación de anuncios, organización de visitas y apoyo documental durante operaciones inmobiliarias.",
     "metadata": {
       "categoria": "faq",
       "fuente": "faqs.txt",
@@ -833,7 +833,7 @@
   },
   {
     "id": "faq_3",
-    "texto": "P: ¿En qué zonas trabajamos?\nR: Operamos principalmente en zonas urbanas y residenciales de Madrid y alrededores. Las áreas concretas pueden variar según disponibilidad y demanda.",
+    "texto": "P: ¿En qué zonas trabajamos?\r\nR: Operamos principalmente en zonas urbanas y residenciales de Madrid y alrededores. Las áreas concretas pueden variar según disponibilidad y demanda.",
     "metadata": {
       "categoria": "faq",
       "fuente": "faqs.txt",
@@ -842,7 +842,7 @@
   },
   {
     "id": "faq_4",
-    "texto": "P: ¿Cuál es el horario de atención?\nR: El horario de atención no está especificado. La disponibilidad puede depender del canal de contacto y del agente asignado.",
+    "texto": "P: ¿Cuál es el horario de atención?\r\nR: El horario de atención no está especificado. La disponibilidad puede depender del canal de contacto y del agente asignado.",
     "metadata": {
       "categoria": "faq",
       "fuente": "faqs.txt",
@@ -851,7 +851,7 @@
   },
   {
     "id": "faq_5",
-    "texto": "P: ¿Qué canales de contacto están disponibles?\nR: Se puede contactar mediante teléfono, correo electrónico, formularios web o mensajería digital, según los canales habilitados por la empresa.",
+    "texto": "P: ¿Qué canales de contacto están disponibles?\r\nR: Se puede contactar mediante teléfono, correo electrónico, formularios web o mensajería digital, según los canales habilitados por la empresa.",
     "metadata": {
       "categoria": "faq",
       "fuente": "faqs.txt",
@@ -860,7 +860,7 @@
   },
   {
     "id": "faq_6",
-    "texto": "P: ¿Cómo funciona el proceso de compra de una vivienda?\nR: El proceso incluye búsqueda del inmueble, visitas, negociación, firma de arras, gestión financiera y firma ante notario.",
+    "texto": "P: ¿Cómo funciona el proceso de compra de una vivienda?\r\nR: El proceso incluye búsqueda del inmueble, visitas, negociación, firma de arras, gestión financiera y firma ante notario.",
     "metadata": {
       "categoria": "faq",
       "fuente": "faqs.txt",
@@ -869,7 +869,7 @@
   },
   {
     "id": "faq_7",
-    "texto": "P: ¿Cómo funciona el proceso de alquiler?\nR: El proceso de alquiler incluye visita del inmueble, validación de documentación, reserva, firma del contrato y entrega de llaves.",
+    "texto": "P: ¿Cómo funciona el proceso de alquiler?\r\nR: El proceso de alquiler incluye visita del inmueble, validación de documentación, reserva, firma del contrato y entrega de llaves.",
     "metadata": {
       "categoria": "faq",
       "fuente": "faqs.txt",
@@ -878,7 +878,7 @@
   },
   {
     "id": "faq_8",
-    "texto": "P: ¿Qué documentación se necesita para comprar una vivienda?\nR: Habitualmente se solicita documento de identidad, justificantes económicos y documentación bancaria relacionada con la financiación.",
+    "texto": "P: ¿Qué documentación se necesita para comprar una vivienda?\r\nR: Habitualmente se solicita documento de identidad, justificantes económicos y documentación bancaria relacionada con la financiación.",
     "metadata": {
       "categoria": "faq",
       "fuente": "faqs.txt",
@@ -887,7 +887,7 @@
   },
   {
     "id": "faq_9",
-    "texto": "P: ¿Qué documentación se necesita para alquilar una vivienda?\nR: Normalmente se requiere documento identificativo, contrato laboral, nóminas y justificantes de solvencia económica.",
+    "texto": "P: ¿Qué documentación se necesita para alquilar una vivienda?\r\nR: Normalmente se requiere documento identificativo, contrato laboral, nóminas y justificantes de solvencia económica.",
     "metadata": {
       "categoria": "faq",
       "fuente": "faqs.txt",
@@ -896,7 +896,7 @@
   },
   {
     "id": "faq_10",
-    "texto": "P: ¿Cómo se puede reservar una vivienda?\nR: La reserva suele realizarse mediante firma de un documento de reserva y el pago de una cantidad acordada entre las partes.",
+    "texto": "P: ¿Cómo se puede reservar una vivienda?\r\nR: La reserva suele realizarse mediante firma de un documento de reserva y el pago de una cantidad acordada entre las partes.",
     "metadata": {
       "categoria": "faq",
       "fuente": "faqs.txt",
@@ -905,7 +905,7 @@
   },
   {
     "id": "faq_11",
-    "texto": "P: ¿Qué son las arras?\nR: Las arras son un acuerdo previo entre comprador y vendedor que formaliza el compromiso de compraventa mediante una señal económica.",
+    "texto": "P: ¿Qué son las arras?\r\nR: Las arras son un acuerdo previo entre comprador y vendedor que formaliza el compromiso de compraventa mediante una señal económica.",
     "metadata": {
       "categoria": "faq",
       "fuente": "faqs.txt",
@@ -914,7 +914,7 @@
   },
   {
     "id": "faq_12",
-    "texto": "P: ¿Cuáles son los plazos habituales de una compraventa?\nR: El plazo habitual puede variar entre varias semanas y algunos meses, dependiendo de la financiación y de la documentación disponible.",
+    "texto": "P: ¿Cuáles son los plazos habituales de una compraventa?\r\nR: El plazo habitual puede variar entre varias semanas y algunos meses, dependiendo de la financiación y de la documentación disponible.",
     "metadata": {
       "categoria": "faq",
       "fuente": "faqs.txt",
@@ -923,7 +923,7 @@
   },
   {
     "id": "faq_13",
-    "texto": "P: ¿Qué gastos existen en una compraventa?\nR: Los gastos habituales incluyen impuestos, notaría, registro, gestoría y posibles costes de financiación hipotecaria.",
+    "texto": "P: ¿Qué gastos existen en una compraventa?\r\nR: Los gastos habituales incluyen impuestos, notaría, registro, gestoría y posibles costes de financiación hipotecaria.",
     "metadata": {
       "categoria": "faq",
       "fuente": "faqs.txt",
@@ -932,7 +932,7 @@
   },
   {
     "id": "faq_14",
-    "texto": "P: ¿Qué es una hipoteca?\nR: Una hipoteca es un préstamo bancario destinado a financiar la compra de un inmueble, utilizando la vivienda como garantía.",
+    "texto": "P: ¿Qué es una hipoteca?\r\nR: Una hipoteca es un préstamo bancario destinado a financiar la compra de un inmueble, utilizando la vivienda como garantía.",
     "metadata": {
       "categoria": "faq",
       "fuente": "faqs.txt",
@@ -941,7 +941,7 @@
   },
   {
     "id": "faq_15",
-    "texto": "P: ¿Qué es una tasación inmobiliaria?\nR: La tasación es una valoración técnica realizada por una entidad autorizada para determinar el valor aproximado de un inmueble.",
+    "texto": "P: ¿Qué es una tasación inmobiliaria?\r\nR: La tasación es una valoración técnica realizada por una entidad autorizada para determinar el valor aproximado de un inmueble.",
     "metadata": {
       "categoria": "faq",
       "fuente": "faqs.txt",
@@ -950,7 +950,7 @@
   },
   {
     "id": "faq_16",
-    "texto": "P: ¿Qué función tiene la notaría?\nR: La notaría formaliza la firma de escrituras y verifica la legalidad de la operación inmobiliaria.",
+    "texto": "P: ¿Qué función tiene la notaría?\r\nR: La notaría formaliza la firma de escrituras y verifica la legalidad de la operación inmobiliaria.",
     "metadata": {
       "categoria": "faq",
       "fuente": "faqs.txt",
@@ -959,7 +959,7 @@
   },
   {
     "id": "faq_17",
-    "texto": "P: ¿Para qué sirve el Registro de la Propiedad?\nR: El registro permite inscribir oficialmente la titularidad del inmueble y garantizar seguridad jurídica sobre la propiedad.",
+    "texto": "P: ¿Para qué sirve el Registro de la Propiedad?\r\nR: El registro permite inscribir oficialmente la titularidad del inmueble y garantizar seguridad jurídica sobre la propiedad.",
     "metadata": {
       "categoria": "faq",
       "fuente": "faqs.txt",
@@ -968,7 +968,7 @@
   },
   {
     "id": "faq_18",
-    "texto": "P: ¿Qué impuestos intervienen en la compra de una vivienda?\nR: Los impuestos dependen del tipo de inmueble y de la comunidad autónoma. Pueden incluir IVA, ITP y AJD.",
+    "texto": "P: ¿Qué impuestos intervienen en la compra de una vivienda?\r\nR: Los impuestos dependen del tipo de inmueble y de la comunidad autónoma. Pueden incluir IVA, ITP y AJD.",
     "metadata": {
       "categoria": "faq",
       "fuente": "faqs.txt",
@@ -977,7 +977,7 @@
   },
   {
     "id": "faq_19",
-    "texto": "P: ¿Qué es la cuota de comunidad?\nR: Es el importe periódico destinado al mantenimiento de zonas comunes y servicios compartidos del edificio o urbanización.",
+    "texto": "P: ¿Qué es la cuota de comunidad?\r\nR: Es el importe periódico destinado al mantenimiento de zonas comunes y servicios compartidos del edificio o urbanización.",
     "metadata": {
       "categoria": "faq",
       "fuente": "faqs.txt",
@@ -986,7 +986,7 @@
   },
   {
     "id": "faq_20",
-    "texto": "P: ¿Qué es el IBI?\nR: El Impuesto sobre Bienes Inmuebles es un tributo municipal asociado a la titularidad de un inmueble.",
+    "texto": "P: ¿Qué es el IBI?\r\nR: El Impuesto sobre Bienes Inmuebles es un tributo municipal asociado a la titularidad de un inmueble.",
     "metadata": {
       "categoria": "faq",
       "fuente": "faqs.txt",
@@ -995,7 +995,7 @@
   },
   {
     "id": "faq_21",
-    "texto": "P: ¿Cómo se publica un piso en la plataforma?\nR: El inmueble se registra con fotografías, descripción, características técnicas y documentación básica de la propiedad.",
+    "texto": "P: ¿Cómo se publica un piso en la plataforma?\r\nR: El inmueble se registra con fotografías, descripción, características técnicas y documentación básica de la propiedad.",
     "metadata": {
       "categoria": "faq",
       "fuente": "faqs.txt",
@@ -1004,7 +1004,7 @@
   },
   {
     "id": "faq_22",
-    "texto": "P: ¿Cómo se gestionan las visitas?\nR: Las visitas se organizan mediante cita previa y coordinación entre propietarios, agentes y posibles compradores o inquilinos.",
+    "texto": "P: ¿Cómo se gestionan las visitas?\r\nR: Las visitas se organizan mediante cita previa y coordinación entre propietarios, agentes y posibles compradores o inquilinos.",
     "metadata": {
       "categoria": "faq",
       "fuente": "faqs.txt",
@@ -1013,7 +1013,7 @@
   },
   {
     "id": "faq_23",
-    "texto": "P: ¿Cómo se realiza la valoración de un inmueble?\nR: La valoración se basa en ubicación, superficie, estado, mercado local y características del inmueble.",
+    "texto": "P: ¿Cómo se realiza la valoración de un inmueble?\r\nR: La valoración se basa en ubicación, superficie, estado, mercado local y características del inmueble.",
     "metadata": {
       "categoria": "faq",
       "fuente": "faqs.txt",
@@ -1022,7 +1022,7 @@
   },
   {
     "id": "faq_24",
-    "texto": "P: ¿Qué ocurre tras realizar una reserva?\nR: Tras la reserva se suele retirar temporalmente el inmueble del mercado mientras continúa el proceso documental.",
+    "texto": "P: ¿Qué ocurre tras realizar una reserva?\r\nR: Tras la reserva se suele retirar temporalmente el inmueble del mercado mientras continúa el proceso documental.",
     "metadata": {
       "categoria": "faq",
       "fuente": "faqs.txt",
@@ -1031,7 +1031,7 @@
   },
   {
     "id": "faq_25",
-    "texto": "P: ¿Se puede cancelar una reserva?\nR: La cancelación depende de las condiciones acordadas en el documento firmado entre las partes.",
+    "texto": "P: ¿Se puede cancelar una reserva?\r\nR: La cancelación depende de las condiciones acordadas en el documento firmado entre las partes.",
     "metadata": {
       "categoria": "faq",
       "fuente": "faqs.txt",
@@ -1040,7 +1040,7 @@
   },
   {
     "id": "faq_26",
-    "texto": "P: ¿Cómo se informa del estado de un inmueble?\nR: El estado del inmueble se comunica mediante descripción técnica, fotografías y observaciones proporcionadas durante la gestión.",
+    "texto": "P: ¿Cómo se informa del estado de un inmueble?\r\nR: El estado del inmueble se comunica mediante descripción técnica, fotografías y observaciones proporcionadas durante la gestión.",
     "metadata": {
       "categoria": "faq",
       "fuente": "faqs.txt",
@@ -1049,7 +1049,7 @@
   },
   {
     "id": "faq_27",
-    "texto": "P: ¿Cómo se pueden resolver dudas sobre una operación?\nR: Las dudas pueden gestionarse a través de los canales de atención disponibles o mediante contacto directo con el agente asignado.",
+    "texto": "P: ¿Cómo se pueden resolver dudas sobre una operación?\r\nR: Las dudas pueden gestionarse a través de los canales de atención disponibles o mediante contacto directo con el agente asignado.",
     "metadata": {
       "categoria": "faq",
       "fuente": "faqs.txt",
@@ -1058,7 +1058,7 @@
   },
   {
     "id": "faq_28",
-    "texto": "P: ¿Cuál es el tiempo habitual de respuesta?\nR: El tiempo de respuesta no está especificado y puede variar según la carga de trabajo y el canal utilizado.",
+    "texto": "P: ¿Cuál es el tiempo habitual de respuesta?\r\nR: El tiempo de respuesta no está especificado y puede variar según la carga de trabajo y el canal utilizado.",
     "metadata": {
       "categoria": "faq",
       "fuente": "faqs.txt",
@@ -1067,7 +1067,7 @@
   },
   {
     "id": "faq_29",
-    "texto": "P: ¿Qué hacer si ocurre una incidencia durante una visita?\nR: La incidencia debe comunicarse al agente responsable para su revisión y seguimiento.",
+    "texto": "P: ¿Qué hacer si ocurre una incidencia durante una visita?\r\nR: La incidencia debe comunicarse al agente responsable para su revisión y seguimiento.",
     "metadata": {
       "categoria": "faq",
       "fuente": "faqs.txt",
@@ -1076,7 +1076,7 @@
   },
   {
     "id": "faq_30",
-    "texto": "P: ¿Existe una política de privacidad?\nR: Sí. La gestión de datos personales debe realizarse conforme a la normativa vigente de protección de datos.",
+    "texto": "P: ¿Existe una política de privacidad?\r\nR: Sí. La gestión de datos personales debe realizarse conforme a la normativa vigente de protección de datos.",
     "metadata": {
       "categoria": "faq",
       "fuente": "faqs.txt",
@@ -1085,7 +1085,7 @@
   },
   {
     "id": "faq_31",
-    "texto": "P: ¿Cómo se protegen los datos personales?\nR: Los datos personales se almacenan y gestionan utilizando medidas de seguridad técnicas y organizativas adecuadas.",
+    "texto": "P: ¿Cómo se protegen los datos personales?\r\nR: Los datos personales se almacenan y gestionan utilizando medidas de seguridad técnicas y organizativas adecuadas.",
     "metadata": {
       "categoria": "faq",
       "fuente": "faqs.txt",
@@ -1094,7 +1094,7 @@
   },
   {
     "id": "faq_32",
-    "texto": "P: ¿Qué tipo de inmuebles gestionamos?\nR: Gestionamos viviendas, pisos, chalets, locales comerciales, oficinas y otros activos inmobiliarios.",
+    "texto": "P: ¿Qué tipo de inmuebles gestionamos?\r\nR: Gestionamos viviendas, pisos, chalets, locales comerciales, oficinas y otros activos inmobiliarios.",
     "metadata": {
       "categoria": "faq",
       "fuente": "faqs.txt",
@@ -1103,7 +1103,7 @@
   },
   {
     "id": "faq_33",
-    "texto": "P: ¿Cuál es el perfil de cliente habitual?\nR: El perfil habitual incluye compradores, vendedores, propietarios, inquilinos e inversores inmobiliarios.",
+    "texto": "P: ¿Cuál es el perfil de cliente habitual?\r\nR: El perfil habitual incluye compradores, vendedores, propietarios, inquilinos e inversores inmobiliarios.",
     "metadata": {
       "categoria": "faq",
       "fuente": "faqs.txt",
@@ -1112,7 +1112,7 @@
   },
   {
     "id": "faq_34",
-    "texto": "P: ¿Qué barrios o zonas cubrimos?\nR: Trabajamos en distintos barrios y municipios según disponibilidad de inmuebles y demanda del mercado.",
+    "texto": "P: ¿Qué barrios o zonas cubrimos?\r\nR: Trabajamos en distintos barrios y municipios según disponibilidad de inmuebles y demanda del mercado.",
     "metadata": {
       "categoria": "faq",
       "fuente": "faqs.txt",
@@ -1121,7 +1121,7 @@
   },
   {
     "id": "faq_35",
-    "texto": "P: ¿Qué requisitos existen para vender una vivienda?\nR: Es necesario acreditar la titularidad del inmueble y disponer de la documentación obligatoria para la operación.",
+    "texto": "P: ¿Qué requisitos existen para vender una vivienda?\r\nR: Es necesario acreditar la titularidad del inmueble y disponer de la documentación obligatoria para la operación.",
     "metadata": {
       "categoria": "faq",
       "fuente": "faqs.txt",
@@ -1130,7 +1130,7 @@
   },
   {
     "id": "faq_36",
-    "texto": "P: ¿Qué requisitos existen para comprar una vivienda?\nR: El comprador debe acreditar identidad, capacidad financiera y cumplimiento de los requisitos legales aplicables.",
+    "texto": "P: ¿Qué requisitos existen para comprar una vivienda?\r\nR: El comprador debe acreditar identidad, capacidad financiera y cumplimiento de los requisitos legales aplicables.",
     "metadata": {
       "categoria": "faq",
       "fuente": "faqs.txt",
@@ -1139,7 +1139,7 @@
   },
   {
     "id": "faq_37",
-    "texto": "P: ¿Qué requisitos existen para alquilar una vivienda?\nR: Habitualmente se solicita solvencia económica y documentación identificativa actualizada.",
+    "texto": "P: ¿Qué requisitos existen para alquilar una vivienda?\r\nR: Habitualmente se solicita solvencia económica y documentación identificativa actualizada.",
     "metadata": {
       "categoria": "faq",
       "fuente": "faqs.txt",

@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import type { ChatResponse, ChatError } from "@/lib/types";
 
 import { PropertyCard } from "./PropertyCard";
-import { Sources } from "./Sources";
+import { Sources } from "./sources";
 import { SuggestedChips } from "./SuggestedChips";
 import { FeedbackModal } from "./FeedbackModal";
 
@@ -23,7 +23,9 @@ interface BotMsg {
 type Msg = UserMsg | BotMsg;
 
 const MAX_CHARS = 500;
-const MAX_QUESTIONS = 1000;
+// Default 5 in production; override for local testing via .env.local
+// (NEXT_PUBLIC_MAX_QUESTIONS). Never commit the override.
+const MAX_QUESTIONS = Number(process.env.NEXT_PUBLIC_MAX_QUESTIONS) || 5;
 const STORAGE_KEY = "estateai-demo-questions";
 
 export function Chat() {
@@ -241,6 +243,24 @@ export function Chat() {
                               (property) => (
                                 <PropertyCard
                                   key={property.id}
+                                  p={property}
+                                />
+                              ),
+                            )}
+                          </div>
+                        )}
+
+                      {message.data &&
+                        message.data.alternatives &&
+                        message.data.alternatives.length > 0 && (
+                          <div className="mt-4 space-y-3">
+                            <div className="text-[11px] font-semibold uppercase tracking-wide text-text-muted">
+                              Opciones parecidas
+                            </div>
+                            {message.data.alternatives.map(
+                              (property) => (
+                                <PropertyCard
+                                  key={`alt-${property.id}`}
                                   p={property}
                                 />
                               ),
